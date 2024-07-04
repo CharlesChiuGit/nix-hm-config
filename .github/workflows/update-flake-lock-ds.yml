@@ -6,7 +6,7 @@ on:
 jobs:
   lockfile:
     runs-on: ubuntu-latest
-    permissions: write-all
+    # permissions: write-all
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -21,3 +21,5 @@ jobs:
           pr-labels: | # Labels to be set on the PR
             dependencies
             automated
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
